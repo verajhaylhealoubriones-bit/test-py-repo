@@ -1,14 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Card</title>
+
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div id="profile-container"></div>
+    <div class="container">
 
-    <script src="script.js.js"></script>
+        <h1>Student Registration</h1>
+        <p class="subtitle">Interactive Student Registration Card</p>
+
+        
+        <div class="section">
+            <h2>Student Information</h2>
+
+            <label for="nameInput">Name:</label>
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="Enter your name"
+            >
+
+            <p id="welcomeMessage">Welcome!</p>
+        </div>
+
+
+
+        <div class="section">
+            <h2> Registration Form </h2>
+
+            <form id="registrationForm">
+
+                <label for="studentName">Full Name:</label>
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="course">Course:</label>
+                <input
+                    type="text"
+                    id="course"
+                    placeholder="Enter your course"
+                    required
+                >
+
+                <button type="submit">Register</button>
+            </form>
+
+            <p id="registrationMessage"></p>
+        </div>
+
+
+      
+        <div class="section">
+            <h2>Theme</h2>
+
+            <button id="themeButton">
+                Toggle Dark Mode
+            </button>
+        </div>
+
+
+        
+        <div class="section">
+            <h2> Keyboard </h2>
+
+            <p>
+                Press <strong>Escape</strong> to clear the welcome message.
+            </p>
+        </div>
+
+    </div>
+
+   
+    <script src="script.js"></script>
 
 </body>
 </html>

@@ -1,19 +1,49 @@
-const profileContainer = document.getElementById("profile-container");
+const nameInput = document.querySelector("#nameInput");
+const welcomeMessage = document.querySelector("#welcomeMessage");
+
+nameInput.addEventListener("input", () => {
+    welcomeMessage.textContent = "Welcome, " + nameInput.value + "!";
+});
 
 
-const name = document.createElement("h2");
-const bio = document.createElement("p");
-const avatar = document.createElement("img");
+// FORM SUBMISSION
+
+const form = document.querySelector("#registrationForm");
+const studentName = document.querySelector("#studentName");
+const course = document.querySelector("#course");
+const registrationMessage = document.querySelector("#registrationMessage");
+
+form.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const name = studentName.value;
+    const studentCourse = course.value;
+
+    registrationMessage.textContent =
+        "Registration successful! Welcome " +
+        name +
+        " - " +
+        studentCourse +
+        ".";
+});
 
 
-name.textContent = "Lhealou Jhay Vera";
+//  TOGGLE THEME
 
-bio.textContent = "I am a BSIS student interested in basic programming, financial analysis, photography, videography, and video editing.";
+const themeButton = document.querySelector("#themeButton");
 
-avatar.src = "https://i.pinimg.com/originals/19/18/51/191851aefde677526f000487a23d4f8a.gif";
-avatar.alt = "Student Avatar";
+themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
 
 
-profileContainer.appendChild(avatar);
-profileContainer.appendChild(name);
-profileContainer.appendChild(bio);
+// KEYBOARD 
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+        welcomeMessage.textContent = "";
+    }
+
+});
